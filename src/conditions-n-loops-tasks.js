@@ -99,7 +99,13 @@ function canQueenCaptureKing(queen, king) {
  *  3, 0, 3   => false
  */
 function isIsoscelesTriangle(a, b, c) {
-  return (a == b || a == c || a == c);
+  if (a + b <= c || a + c <= b || b + c <= a) {
+    return false;
+  }
+  if (a === b || a === c || c === b) {
+    return true;
+  }
+  return false;
 }
 
 /**
