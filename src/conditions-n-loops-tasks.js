@@ -153,7 +153,7 @@ function convertToRomanNumerals(num) {
       return '';
   }
 }
-console.log(convertToRomanNumerals(40));
+// console.log(convertToRomanNumerals(40));
 /**
  * Converts a number to a string, replacing digits with words.
  * In this task, the use of methods of the String and Array classes is not allowed.
@@ -169,8 +169,51 @@ console.log(convertToRomanNumerals(40));
  *  '10,5'    => 'one zero point five'
  *  '1950.2'  => 'one nine five zero point two'
  */
-function convertNumberToString(/* numberStr */) {
-  throw new Error('Not implemented');
+function convertNumberToString(numberStr) {
+  let resultStr = '';
+  for (let index = 0; index < numberStr.length; index += 1) {
+    switch (true) {
+      case numberStr[index] === '0':
+        resultStr += 'zero';
+        break;
+      case numberStr[index] === '1':
+        resultStr += 'one';
+        break;
+      case numberStr[index] === '2':
+        resultStr += 'two';
+        break;
+      case numberStr[index] === '3':
+        resultStr += 'three';
+        break;
+      case numberStr[index] === '4':
+        resultStr += 'four';
+        break;
+      case numberStr[index] === '5':
+        resultStr += 'five';
+        break;
+      case numberStr[index] === '6':
+        resultStr += 'six';
+        break;
+      case numberStr[index] === '7':
+        resultStr += 'seven';
+        break;
+      case numberStr[index] === '8':
+        resultStr += 'eight';
+        break;
+      case numberStr[index] === '9':
+        resultStr += 'nine';
+        break;
+      case numberStr[index] === '-':
+        resultStr += 'minus';
+        break;
+      default:
+        resultStr += 'point';
+    }
+    if (index !== numberStr.length - 1) {
+      resultStr += ' ';
+    }
+  }
+  return resultStr;
 }
 
 /**
